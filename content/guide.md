@@ -177,6 +177,23 @@ Within a minute, your changes will be live on Netlify.
 
 ---
 
+## Step 7 — A Challenge: Figure It Out Yourself
+
+You've made it this far by following instructions. This last one is different... there are no steps.
+
+Look at your browser tab right now: next to the page title there's a tiny image (you'll also see it next to the link when you share your site). It's currently the default. **Your challenge: change it to something of your own, perhaps your favorite icon!**
+
+I'm not going to tell you how to do it... and that's the point. This is exactly the kind of small, well-defined problem you can now solve on your own. You have everything you need. You can:
+
+- **Ask KiloCode** — describe what you want and let it work out which files to change.
+- **Search the web** — figuring out what this little icon is even *called* is half the battle.
+- **Ask an AI chat** — UvA AI Chat or whatever you like.
+- **Work with the person next to you** — two heads, one tiny icon.
+
+When it shows up in your browser tab, you've done it. Commemorate!
+
+---
+
 ## Going Further
 
 Things you can explore after the workshop:
