@@ -14,8 +14,6 @@ showAuthor: false
 ---
 
 
----
-
 ## Under Review / In Progress
 
 - *The Meanings of Meaning in OMG*
