@@ -20,7 +20,7 @@ I am **Claudia Montanaro**, PhD student @ILLC, UvA.
 ## Education
 
 **PhD** — University of Amsterdam, 2025-
-Thesis: *Ops*
+Thesis: *idk*
 
 **MA** — Unibo, 2024
 Thesis: *Technology Resistance*
