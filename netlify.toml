@@ -6,9 +6,6 @@
   HUGO_VERSION = "0.155.2"
   HUGO_ENVIRONMENT = "production"
 
-[context.production.environment]
-  HUGO_BASEURL = "https://phdpersonalpagetutorial.netlify.app/"
-
 [[redirects]]
   from = "/*"
   to = "/404.html"
