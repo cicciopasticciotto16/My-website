@@ -1,6 +1,18 @@
 baseURL = 'https://warm-shortbread-0407c9.netlify.app/'
 languageCode = 'en-us'
-title = 'My New Hugo Site'
+title = 'Claudia Montanaro'
+
+# ---------------------------------------------------------------
+# LINK DEI SOCIAL (footer)
+# Sostituisci gli indirizzi qui sotto con i tuoi.
+# Per NASCONDERE un'icona, lascia le virgolette vuote: scholar = ''
+# ---------------------------------------------------------------
+[params]
+  [params.social]
+    scholar   = 'https://scholar.google.com/citations?user=ID-DA-INSERIRE'
+    linkedin  = 'https://www.linkedin.com/in/PROFILO-DA-INSERIRE'
+    email     = 'indirizzo@da-inserire.it'
+    instagram = 'https://www.instagram.com/PROFILO-DA-INSERIRE'
 
 [[menus.main]]
 name = 'Home'
