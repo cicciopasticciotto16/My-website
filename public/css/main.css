@@ -2736,13 +2736,13 @@ video {
 
 /* =========================================================================
    Header (layouts/partials/header.html)
-   Brand a sinistra su fondo chiaro, link delle sezioni a destra su fondo
-   blu; il confine fra i due blocchi e' un'onda (SVG in markup).
+   Brand a sinistra su fondo chiaro; i link stanno sopra un gruppo di forme
+   rotonde blu il cui bordo ondula (morphing del border-radius).
    ========================================================================= */
 
 .site-header-outer {
-  /* contiene il prolungamento del blu fino al bordo della finestra */
-  overflow-x: hidden;
+  /* le forme sporgono verso il brand: qui vengono contenute nell'header */
+  overflow: hidden;
 }
 
 .site-header {
@@ -2768,69 +2768,177 @@ video {
   flex: none;
 }
 
-/* Rotazione sempre attiva: riusa la @keyframes spin gia' presente nel file.
-   Nessun opt-out per prefers-reduced-motion: e' una scelta esplicita. */
+/* Ruota solo mentre il mouse e' sull'header (come le bolle). In pausa invece
+   di rimossa: uscendo l'icona si ferma dov'e' e riprende da la', senza lo
+   scatto di ritorno a zero. Riusa la @keyframes spin gia' presente nel file. */
 .site-header__logo-icon {
   display: block;
   transform-origin: 50% 50%;
   animation: spin 3s linear infinite;
+  animation-play-state: paused;
+}
+
+.site-header:hover .site-header__logo-icon {
+  animation-play-state: running;
 }
 
 .site-header__title {
   min-width: 0;
 }
 
-/* ---------- Blocco blu con i link ---------- */
+/* ---------- Blocco dei link ---------- */
 
 .site-header__links {
   position: relative;
   display: flex;
   align-items: center;
   min-width: 0;
-  padding: 0.75rem 1rem;
-  background-color: #3b82f6;
-  color: #3b82f6; /* eredita nel currentColor delle onde */
+  /* il padding verticale fa spazio alle bolle (5.6rem) senza tagliarle */
+  padding: 2.25rem 1.5rem;
 }
 
-/* Il blu continua fino al bordo destro della finestra */
-.site-header__links::after {
-  content: "";
+/* ---------- Forme rotonde di sfondo ---------- */
+
+.site-header__blobs {
   position: absolute;
   top: 0;
+  right: 0;
   bottom: 0;
-  left: 100%;
-  width: 100vw;
-  background-color: #3b82f6;
-}
-
-/* ---------- Onde di separazione ---------- */
-
-.site-header__wave {
-  position: absolute;
-  display: block;
+  left: 0;
   pointer-events: none;
 }
 
-/* verticale: sul fianco sinistro del blocco blu */
-.site-header__wave--v {
-  top: 0;
-  left: -23px;
-  width: 24px;
-  height: 100%;
+/* Tutte le bollicine hanno la stessa taglia e si sovrappongono (passo 12%
+   contro un diametro di 5.6rem), quindi dietro ai link il blu e' sempre pieno
+   e il testo bianco resta leggibile. Nessuna arriva ai bordi del blocco: cosi'
+   non vengono tagliate a destra o in basso. */
+.site-header__blobs span {
+  position: absolute;
+  top: 50%;
+  width: 5.6rem;
+  height: 5.6rem;
+  margin-top: -2.8rem;
+  background-color: #3b82f6;
+  border-radius: 55% 45% 58% 42% / 42% 55% 45% 58%;
+  transition: border-radius 0.6s ease;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
 }
 
-/* orizzontale: sopra il blocco blu, quando i due blocchi sono impilati */
-.site-header__wave--h {
-  display: none;
-  top: -23px;
-  left: 0;
-  width: 100%;
-  height: 24px;
+/* Fila principale */
+.site-header__blobs span:nth-child(1) { left: 0; }
+.site-header__blobs span:nth-child(2) { left: 12%; margin-top: -3.1rem; }
+.site-header__blobs span:nth-child(3) { left: 24%; margin-top: -2.5rem; }
+.site-header__blobs span:nth-child(4) { left: 36%; }
+.site-header__blobs span:nth-child(5) { left: 48%; margin-top: -3.1rem; }
+.site-header__blobs span:nth-child(6) { left: 60%; margin-top: -2.5rem; }
+.site-header__blobs span:nth-child(7) { left: 72%; margin-top: -2.9rem; }
+
+/* Ultima della fila, ancorata a destra: mai a filo del bordo */
+.site-header__blobs span:nth-child(8) {
+  left: auto;
+  right: 1.25rem;
+  margin-top: -2.6rem;
+}
+
+/* Bolle intercalate, piu' spostate in verticale: sono queste a rendere il
+   profilo articolato invece di una fascia regolare */
+.site-header__blobs span:nth-child(9) {
+  left: 18%;
+  width: 4.8rem;
+  height: 4.8rem;
+  margin-top: -3.2rem;
+}
+
+.site-header__blobs span:nth-child(10) {
+  left: 42%;
+  width: 4.8rem;
+  height: 4.8rem;
+  margin-top: -1.6rem;
+}
+
+.site-header__blobs span:nth-child(11) {
+  left: 66%;
+  width: 4.8rem;
+  height: 4.8rem;
+  margin-top: -3.2rem;
+}
+
+/* Coda che scende verso sinistra, sopra il padding del brand: da' la
+   direzione diagonale (basso a sinistra -> alto a destra) */
+.site-header__blobs span:nth-child(12) {
+  left: -2.5rem;
+  width: 4.6rem;
+  height: 4.6rem;
+  margin-top: -1.8rem;
+}
+
+/* L'ondulazione esiste solo mentre il mouse e' sull'header. Tre forme e tre
+   durate alternate, altrimenti pulsano in sincrono e sembra meccanico. */
+.site-header:hover .site-header__blobs span:nth-child(3n + 1) {
+  animation-name: site-header-bubble;
+  animation-duration: 0.9s;
+}
+
+.site-header:hover .site-header__blobs span:nth-child(3n + 2) {
+  animation-name: site-header-bubble-alt;
+  animation-duration: 1.15s;
+}
+
+.site-header:hover .site-header__blobs span:nth-child(3n + 3) {
+  animation-name: site-header-bubble-3;
+  animation-duration: 0.75s;
+}
+
+@keyframes site-header-bubble {
+  0%,
+  100% {
+    border-radius: 58% 42% 55% 45% / 52% 58% 42% 48%;
+  }
+
+  33% {
+    border-radius: 42% 58% 45% 55% / 58% 42% 55% 45%;
+  }
+
+  66% {
+    border-radius: 52% 48% 58% 42% / 45% 55% 48% 52%;
+  }
+}
+
+@keyframes site-header-bubble-alt {
+  0%,
+  100% {
+    border-radius: 45% 55% 42% 58% / 58% 45% 55% 42%;
+  }
+
+  33% {
+    border-radius: 58% 42% 58% 42% / 42% 58% 42% 58%;
+  }
+
+  66% {
+    border-radius: 48% 52% 45% 55% / 55% 48% 52% 45%;
+  }
+}
+
+@keyframes site-header-bubble-3 {
+  0%,
+  100% {
+    border-radius: 50% 50% 45% 55% / 55% 42% 58% 45%;
+  }
+
+  33% {
+    border-radius: 42% 58% 52% 48% / 48% 55% 45% 52%;
+  }
+
+  66% {
+    border-radius: 58% 42% 48% 52% / 45% 48% 55% 58%;
+  }
 }
 
 /* ---------- Link ---------- */
 
 .site-header__nav {
+  position: relative; /* sopra le forme */
   min-width: 0;
 }
 
@@ -2857,8 +2965,9 @@ video {
 
 /* ---------- Breakpoints ---------- */
 
-/* Sotto i 640px brand e link si impilano: l'onda diventa orizzontale */
-@media (max-width: 639px) {
+/* Sotto i 640px brand e link si impilano: la fascia blu va a tutta larghezza
+   e le bolle laterali, che finirebbero fuori schermo, spariscono. */
+@media (max-width: 767px) {
   .site-header {
     flex-direction: column;
     align-items: stretch;
@@ -2869,40 +2978,24 @@ video {
   }
 
   .site-header__links {
-    margin-top: 1.5rem;
-    padding: 0.75rem 1rem 1rem;
+    margin-top: 1.25rem;
+    padding: 2.25rem 1.5rem;
   }
 
-  .site-header__wave--v {
+  .site-header__blobs span:nth-child(n + 12) {
     display: none;
-  }
-
-  .site-header__wave--h {
-    display: block;
-  }
-
-  .site-header__links::after {
-    display: none;
-  }
-}
-
-@media (min-width: 640px) {
-  .site-header__brand {
-    padding-right: 2.5rem;
-  }
-
-  .site-header__links {
-    padding-left: 0.5rem;
   }
 }
 
 @media (min-width: 768px) {
   .site-header__brand {
     padding-left: 1.5rem;
+    /* spazio per la bolla di coda, che sporge di circa 2.5rem */
+    padding-right: 4rem;
   }
 
   .site-header__links {
-    padding-right: 1.5rem;
+    padding-right: 2rem;
   }
 }
 
@@ -2912,6 +3005,6 @@ video {
   }
 
   .site-header__links {
-    padding-right: 2rem;
+    padding-right: 2.5rem;
   }
 }
