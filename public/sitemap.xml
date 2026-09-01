@@ -8,8 +8,29 @@
     <loc>http://localhost:1313/</loc>
     <lastmod>2023-10-06T20:37:29+07:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/categories/astronomy/</loc>
+    <lastmod>2023-10-04T22:11:36+07:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/black-hole/</loc>
+    <lastmod>2023-10-04T22:11:36+07:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/categories/</loc>
-    <lastmod>2023-09-24T11:15:17+07:00</lastmod>
+    <lastmod>2023-10-04T22:11:36+07:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/</loc>
+    <lastmod>2023-10-04T22:11:36+07:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/relativity/</loc>
+    <lastmod>2023-10-04T22:11:36+07:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/space/</loc>
+    <lastmod>2023-10-04T22:11:36+07:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2023-10-04T22:11:36+07:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/2023/unveiling-the-secrets-of-black-holes/</loc>
+    <lastmod>2023-10-04T22:11:36+07:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/cosmic/</loc>
     <lastmod>2023-09-24T11:15:17+07:00</lastmod>
@@ -20,17 +41,8 @@
     <loc>http://localhost:1313/tags/nebula/</loc>
     <lastmod>2023-09-24T11:15:17+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/</loc>
-    <lastmod>2023-09-24T11:15:17+07:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/categories/space/</loc>
     <lastmod>2023-09-24T11:15:17+07:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/space/</loc>
-    <lastmod>2023-09-24T11:15:17+07:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/categories/astronomy/</loc>
-    <lastmod>2023-09-23T22:45:37+07:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/2023/stellar-spectacles/</loc>
     <lastmod>2023-09-23T22:45:37+07:00</lastmod>
@@ -76,9 +88,5 @@
   </url><url>
     <loc>http://localhost:1313/posts/2022/exoplanets-hunting/</loc>
     <lastmod>2023-07-27T13:03:07+07:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/black-hole/</loc>
-  </url><url>
-    <loc>http://localhost:1313/tags/relativity/</loc>
   </url>
 </urlset>

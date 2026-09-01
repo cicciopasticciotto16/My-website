@@ -1,4 +1,5 @@
-baseURL = 'https://warm-shortbread-0407c9.netlify.app/'
+# Aggiorna il baseURL se compri un tuo dominio
+baseURL = 'https://warm-shortbread-0407c9.netlify.app/' 
 languageCode = 'en-us'
 title = 'Claudia Montanaro'
 
