@@ -3013,3 +3013,23 @@ video {
     padding-right: 2.5rem;
   }
 }
+
+/* =========================================================================
+   Footer (layouts/partials/footer.html)
+   ========================================================================= */
+
+/* Titolo a sinistra, icone social a destra, allineati sulla stessa altezza.
+   I due blocchi non hanno piu' larghezze fisse (60% / 40%): sono dimensionati
+   dal contenuto e distanziati da space-between, cosi' il titolo resta a filo
+   sinistro e le icone a filo destro. `align-items: center` li mette alla
+   stessa altezza (prima il titolo era in alto e le icone centrate).
+   La spaziatura verticale la da' row-gap, che agisce solo quando i due
+   blocchi vanno a capo, su schermi stretti. */
+.site-footer__top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  row-gap: 1.5rem;
+  column-gap: 1.5rem;
+}
