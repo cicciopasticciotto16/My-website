@@ -2963,6 +2963,11 @@ video {
   text-underline-offset: 4px;
 }
 
+/* Sezione che contiene la pagina corrente: bianco pieno, senza sottolineatura */
+.site-header__link--ancestor {
+  opacity: 1;
+}
+
 /* ---------- Breakpoints ---------- */
 
 /* Sotto i 640px brand e link si impilano: la fascia blu va a tutta larghezza

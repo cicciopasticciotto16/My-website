@@ -31,8 +31,10 @@ Renders a menu for the given menu ID.
       {{- /* Add the "aria-current" attribute */}}
       {{- $attrs = merge $attrs (dict "aria-current" "page") }}
     {{- else if $page.HasMenuCurrent .Menu .}}
-      {{- /* Add the "ancestor" class if the link is an ancestor of the current page */}}
-      {{- $attrs = merge $attrs (dict "class" "ancestor") }}
+      {{- /* Sezione che contiene la pagina corrente (es. Posts dentro un post).
+             La classe va APPESA: sostituirla faceva perdere site-header__link,
+             quindi il link restava senza colore. */}}
+      {{- $attrs = merge $attrs (dict "class" (printf "%s %s" $attrs.class "site-header__link--ancestor")) }}
       {{- /* Add the "aria-current" attribute */}}
       {{- $attrs = merge $attrs (dict "aria-current" "true") }}
     {{- end }}
