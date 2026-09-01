@@ -1,42 +1,189 @@
 ---
+# =============================================================================
+# TEMPLATE CURRICULUM (PhD student)
+#
+# Tutti i contenuti della pagina si scrivono qui sotto, nel front matter:
+# il layout `cv` (layouts/page/cv.html) li impagina automaticamente.
+#
+# Regole utili:
+#  - Ogni sezione viene NASCOSTA se la lasci vuota: cancella pure quello
+#    che non ti serve (es. `awards:` se non hai premi da elencare).
+#  - Per aggiungere una voce, copia un blocco che inizia con `- ` e modificalo.
+#  - Le date sono testo libero: scrivi il formato che preferisci
+#    ("2024 – oggi", "Nov 2025", "2023-2024").
+# =============================================================================
+
 title: "About"
-date: 2023-10-06T20:37:29+07:00
-image: images/nadine-shaabana-ZPP-zP8HYG0-unsplash.jpg
+layout: cv
 draft: false
+
+# ---------- Intestazione ----------
+name: "Claudia Montanaro"
+role: "PhD Student in Astrophysics"
+affiliation: "Department of Physics and Astronomy — University of ..."
+location: "Città, Italia"
+photo: "images/default-placeholder.png"   # file in assets/images/, oppure un URL https://
+tagline: "Studio la formazione delle galassie con simulazioni idrodinamiche e dati da survey. In una riga: qual è la domanda che ti tiene sveglia la notte."
+
+# Titolo della sezione che mostra il testo libero in fondo al file
+about_heading: "Profile"
+
+# ---------- Contatti (chip sotto il nome) ----------
+contacts:
+  - label: "Email"
+    value: "nome.cognome@universita.it"
+    url: "mailto:nome.cognome@universita.it"
+  - label: "Office"
+    value: "Edificio X, stanza 000"
+  - label: "Scholar"
+    value: "profilo"
+    url: "https://scholar.google.com/citations?user=ID-DA-INSERIRE"
+  - label: "ORCID"
+    value: "0000-0000-0000-0000"
+    url: "https://orcid.org/0000-0000-0000-0000"
+
+# PDF del CV: metti il file in static/ (es. static/cv.pdf) e indicalo qui.
+# Cancella la riga se non hai un PDF da allegare.
+# cv_pdf: "/cv.pdf"   # <- togli il "#" quando hai messo il PDF in static/
+
+# ---------- Interessi di ricerca (sidebar) ----------
+interests:
+  - "Primo filone di ricerca"
+  - "Secondo filone di ricerca"
+  - "Metodi / tecniche di cui ti occupi"
+
+# ---------- Formazione ----------
+education:
+  - period: "2024 – oggi"
+    title: "PhD in Astrophysics"
+    org: "University of ..."
+    place: "Città, IT"
+    details: "**Supervisor:** Prof. Nome Cognome — *Tesi (provvisoria):* titolo del progetto di dottorato."
+  - period: "2021 – 2024"
+    title: "MSc in Physics"
+    org: "University of ..."
+    place: "Città, IT"
+    details: "Voto: 110/110 con lode. *Tesi:* titolo della tesi magistrale (relatore: Prof. ...)."
+  - period: "2018 – 2021"
+    title: "BSc in Physics"
+    org: "University of ..."
+    place: "Città, IT"
+    details: "*Tesi:* titolo della tesi triennale."
+
+# ---------- Pubblicazioni ----------
+# `status` è opzionale: mostra un'etichetta (submitted, in prep., preprint...).
+publications:
+  - authors: "**Cognome, N.**, Coautore, A., & Coautore, B."
+    title: "Titolo dell'articolo"
+    venue: "Nome della rivista"
+    year: "2026"
+    status: "submitted"
+    links:
+      - label: "arXiv"
+        url: "https://arxiv.org/abs/0000.00000"
+  - authors: "Coautore, A., **Cognome, N.**, & Coautore, B."
+    title: "Titolo del secondo articolo"
+    venue: "Nome della rivista, 123, A45"
+    year: "2025"
+    links:
+      - label: "DOI"
+        url: "https://doi.org/10.0000/xxxxx"
+      - label: "PDF"
+        url: "#"
+
+# ---------- Esperienza di ricerca ----------
+experience:
+  - period: "Estate 2025"
+    title: "Visiting Researcher"
+    org: "Istituto / Osservatorio"
+    place: "Città, Paese"
+    bullets:
+      - "Cosa hai fatto, con quale metodo, con quale risultato."
+      - "Una riga per contributo: sii concreta e quantifica dove puoi."
+  - period: "2023 – 2024"
+    title: "Research Assistant"
+    org: "Gruppo di ricerca"
+    place: "Città, IT"
+    details: "Breve descrizione del progetto e del tuo ruolo."
+
+# ---------- Didattica ----------
+teaching:
+  - period: "2025/26"
+    title: "Teaching Assistant — Nome del corso"
+    org: "Laurea triennale in Fisica"
+    details: "Esercitazioni e tutoraggio, ~30 studenti."
+  - period: "2024/25"
+    title: "Tutor — Laboratorio di ..."
+    org: "University of ..."
+
+# ---------- Conferenze e seminari ----------
+talks:
+  - period: "Set 2025"
+    title: "Titolo del contributo (talk)"
+    org: "Nome della conferenza"
+    place: "Città, Paese"
+  - period: "Mag 2025"
+    title: "Titolo del poster (poster)"
+    org: "Nome del convegno"
+    place: "Città, Paese"
+
+# ---------- Premi e borse ----------
+awards:
+  - period: "2024"
+    title: "Nome della borsa / premio"
+    org: "Ente che l'ha assegnata"
+    details: "Importo o motivazione, se ha senso indicarlo."
+
+# ---------- Attività accademica / terza missione ----------
+service:
+  - period: "2025 – oggi"
+    title: "Rappresentante dei dottorandi"
+    org: "Dipartimento di ..."
+  - period: "2024 – oggi"
+    title: "Divulgazione scientifica"
+    org: "Notte dei Ricercatori, serate osservative, scuole"
+
+# ---------- Competenze (sidebar) ----------
+skills:
+  - group: "Programmazione"
+    items: ["Python", "C++", "Bash", "SQL"]
+  - group: "Scientific stack"
+    items: ["NumPy", "Astropy", "PyTorch", "Jupyter"]
+  - group: "Strumenti"
+    items: ["Git", "LaTeX", "HPC / Slurm", "Docker"]
+
+# ---------- Lingue (sidebar) ----------
+languages:
+  - name: "Italiano"
+    level: "Madrelingua"
+  - name: "Inglese"
+    level: "C1"
+  - name: "Francese"
+    level: "A2"
+
+# ---------- Profili accademici (sidebar) ----------
+profiles:
+  - name: "Google Scholar"
+    value: "profilo"
+    url: "https://scholar.google.com/citations?user=ID-DA-INSERIRE"
+  - name: "ORCID"
+    value: "0000-0000-0000-0000"
+    url: "https://orcid.org/0000-0000-0000-0000"
+  - name: "LinkedIn"
+    value: "profilo"
+    url: "https://www.linkedin.com/in/PROFILO-DA-INSERIRE"
+  - name: "GitHub"
+    value: "@username"
+    url: "https://github.com/USERNAME"
 ---
 
-**Pehtheme Hugo** is your gateway to the mysteries and wonders of the universe. We are a passionate community of space enthusiasts, scientists, and stargazers dedicated to sharing the awe-inspiring beauty and profound knowledge of the cosmos.
+Sono dottoranda in *nome del programma* presso l'Università di ..., dove lavoro
+su *argomento di ricerca* sotto la supervisione del Prof. Nome Cognome.
 
-At **Pehtheme Hugo**, we believe that space exploration is not just a scientific endeavor; it's a human adventure. It's about the curiosity that drives us to look up at the night sky and wonder about the galaxies, stars, and planets that fill our universe.
+Due o tre paragrafi in prima persona: da dove vieni, di cosa ti occupi adesso e
+perché è interessante. Questo è il posto giusto per il taglio narrativo — le
+liste puntuali stanno già nelle sezioni sopra. Chiudi dicendo cosa cerchi
+(collaborazioni, periodi all'estero, dati) e come contattarti.
 
-## Our Mission
-
-Our mission is to inspire, educate, and spark curiosity about space and astronomy. We aim to make the wonders of the cosmos accessible to everyone, from seasoned astronomers to those taking their first steps into the world of stargazing.
-
-Through a diverse range of articles, videos, images, and interactive tools, we strive to:
-
-- **Educate**: We provide well-researched, informative content that explains complex astronomical concepts in an accessible way.
-
-- **Inspire**: We share the breathtaking beauty of the universe through stunning images and stories of space exploration.
-
-- **Connect**: We foster a vibrant community where space enthusiasts can share their passion, ask questions, and learn from each other.
-
-## What You'll Find Here
-
-- **Astronomy Insights**: Dive deep into the universe with articles and guides that cover everything from the basics of stargazing to the latest discoveries in astrophysics.
-
-- **Stunning Visuals**: Explore our gallery of celestial images captured by professional astronomers and space agencies, as well as astrophotography from our community members.
-
-- **Space Exploration Updates**: Stay informed about upcoming space missions, rocket launches, and groundbreaking discoveries in our ever-expanding cosmos.
-
-- **Interactive Tools**: Use our interactive sky maps and tools to plan your stargazing sessions and track celestial events.
-
-## Our Team
-
-We are a dedicated team of space enthusiasts, writers, astronomers, and scientists who are passionate about sharing the wonders of the universe. Our combined expertise in space science, astrophotography, and science communication allows us to bring you the best of the cosmos.
-
-## Join Our Cosmic Community
-
-We invite you to join us on this cosmic journey. Explore the depths of space with us, ask questions, share your own astronomical experiences, and become part of a community that looks to the stars with wonder and curiosity.
-
-Let's embark on this celestial adventure together. Welcome to **My Space Theme**—where the universe unfolds before your eyes.
+Scrivo anche sul [blog di questo sito](/posts/), dove racconto in modo
+divulgativo quello che leggo e studio.

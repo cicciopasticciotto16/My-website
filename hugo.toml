@@ -15,6 +15,21 @@ title = 'Claudia Montanaro'
     email     = 'indirizzo@da-inserire.it'
     instagram = 'https://www.instagram.com/PROFILO-DA-INSERIRE'
 
+# ---------------------------------------------------------------
+# AMICI (bottone "Friends" in basso a destra nella home)
+# Un blocco [[params.friends]] per ogni amico: nome, cognome e sito.
+# Per togliere l'elenco dalla home, cancella tutti i blocchi.
+# ---------------------------------------------------------------
+[[params.friends]]
+  name    = 'Nome'
+  surname = 'Cognome'
+  url     = 'https://sito-dell-amico.it'
+
+[[params.friends]]
+  name    = 'Nome2'
+  surname = 'Cognome2'
+  url     = 'https://sito-della-amica.it'
+
 [[menus.main]]
 name = 'Home'
 pageRef = '/'

@@ -1,0 +1,180 @@
+{{/*
+  Layout curriculum (PhD student).
+  Si attiva sulle pagine che hanno `layout: cv` nel front matter.
+  Tutti i contenuti arrivano dal front matter: vedi content/about.md.
+*/}}
+{{ define "main" }}
+
+<div class="cv">
+
+  <!-- ============ Intestazione ============ -->
+
+  <header class="cv-hero">
+
+    {{- $photo := .Params.photo | default .Params.image }}
+    {{- with $photo }}
+      {{- if strings.HasPrefix . "http" }}
+        <img class="cv-hero__photo" src="{{ . }}" alt="{{ $.Params.name | default $.Title }}">
+      {{- else }}
+        {{- with $img := resources.Get . }}
+          {{- $img = $img.Fill "380x380 Center q85" }}
+          <img class="cv-hero__photo" src="{{ $img.Permalink }}" alt="{{ $.Params.name | default $.Title }}" width="{{ $img.Width }}" height="{{ $img.Height }}">
+        {{- end }}
+      {{- end }}
+    {{- end }}
+
+    <div class="cv-hero__body">
+
+      <h1 class="cv-name">{{ .Params.name | default .Title }}</h1>
+
+      {{- with .Params.role }}<p class="cv-role">{{ . }}</p>{{ end }}
+
+      {{- with .Params.affiliation }}<p class="cv-affiliation">{{ . }}</p>{{ end }}
+
+      {{- with .Params.location }}<p class="cv-affiliation">{{ . }}</p>{{ end }}
+
+      {{- with .Params.tagline }}<p class="cv-tagline">{{ . | markdownify }}</p>{{ end }}
+
+      {{- with .Params.contacts }}
+      <ul class="cv-contacts">
+        {{- range . }}
+        <li>
+          {{- if .url }}
+          <a class="cv-chip" href="{{ .url }}"{{ if strings.HasPrefix .url "http" }} target="_blank" rel="noopener"{{ end }}>
+            <span class="cv-chip__label">{{ .label }}</span>
+            <span>{{ .value | default .url }}</span>
+          </a>
+          {{- else }}
+          <span class="cv-chip">
+            <span class="cv-chip__label">{{ .label }}</span>
+            <span>{{ .value }}</span>
+          </span>
+          {{- end }}
+        </li>
+        {{- end }}
+      </ul>
+      {{- end }}
+
+      {{- with .Params.cv_pdf }}
+      <a class="cv-btn" href="{{ . | relURL }}" target="_blank" rel="noopener">Download CV (PDF)</a>
+      {{- end }}
+
+    </div>
+
+  </header>
+
+  <!-- ============ Corpo ============ -->
+
+  <div class="cv-layout">
+
+    <!-- ---- Colonna principale ---- -->
+
+    <div class="cv-main">
+
+      {{- with .Content }}
+      <section class="cv-section" id="profile">
+        <h2 class="cv-section__title">{{ $.Params.about_heading | default "Profile" }}</h2>
+        <div class="cv-prose prose">{{ . }}</div>
+      </section>
+      {{- end }}
+
+      {{- partial "cv/section.html" (dict "title" "Education" "items" .Params.education) -}}
+
+      <!-- Pubblicazioni: formato bibliografico, non timeline -->
+      {{- with .Params.publications }}
+      <section class="cv-section" id="publications">
+
+        <h2 class="cv-section__title">Publications</h2>
+
+        <ol class="cv-pubs" reversed>
+          {{- range . }}
+          <li>
+            {{- with .authors }}<span class="cv-pub__authors">{{ . | markdownify }}</span>{{ end }}
+            <span class="cv-pub__title">{{ .title }}</span>{{ if .venue }},
+            <em class="cv-pub__venue">{{ .venue }}</em>{{ end }}{{ with .year }}, {{ . }}{{ end }}.
+            {{- with .status }}<span class="cv-badge">{{ . }}</span>{{ end }}
+            {{- with .links }}
+            <span class="cv-pub__links">
+              {{- range . }}
+              <a class="cv-pub__link" href="{{ .url }}" target="_blank" rel="noopener">{{ .label }}</a>
+              {{- end }}
+            </span>
+            {{- end }}
+          </li>
+          {{- end }}
+        </ol>
+
+      </section>
+      {{- end }}
+
+      {{- partial "cv/section.html" (dict "title" "Research Experience" "items" .Params.experience) -}}
+      {{- partial "cv/section.html" (dict "title" "Teaching" "items" .Params.teaching) -}}
+      {{- partial "cv/section.html" (dict "title" "Talks & Conferences" "items" .Params.talks) -}}
+      {{- partial "cv/section.html" (dict "title" "Awards & Grants" "items" .Params.awards) -}}
+      {{- partial "cv/section.html" (dict "title" "Academic Service" "items" .Params.service) -}}
+
+    </div>
+
+    <!-- ---- Sidebar ---- -->
+
+    <aside class="cv-sidebar">
+
+      {{- with .Params.interests }}
+      <div class="cv-card">
+        <h2 class="cv-card__title">Research Interests</h2>
+        <ul class="cv-interests">
+          {{- range . }}
+          <li>{{ . | markdownify }}</li>
+          {{- end }}
+        </ul>
+      </div>
+      {{- end }}
+
+      {{- with .Params.skills }}
+      <div class="cv-card">
+        <h2 class="cv-card__title">Skills</h2>
+        {{- range . }}
+        <div class="cv-skill-group">
+          <div class="cv-skill-group__name">{{ .group }}</div>
+          <ul class="cv-tags">
+            {{- range .items }}
+            <li class="cv-tag">{{ . }}</li>
+            {{- end }}
+          </ul>
+        </div>
+        {{- end }}
+      </div>
+      {{- end }}
+
+      {{- with .Params.languages }}
+      <div class="cv-card">
+        <h2 class="cv-card__title">Languages</h2>
+        <ul class="cv-rows">
+          {{- range . }}
+          <li><span>{{ .name }}</span><span class="cv-rows__value">{{ .level }}</span></li>
+          {{- end }}
+        </ul>
+      </div>
+      {{- end }}
+
+      {{- with .Params.profiles }}
+      <div class="cv-card">
+        <h2 class="cv-card__title">Academic Profiles</h2>
+        <ul class="cv-rows">
+          {{- range . }}
+          <li>
+            <span>{{ .name }}</span>
+            <span class="cv-rows__value"><a href="{{ .url }}" target="_blank" rel="noopener">{{ .value | default "link" }}</a></span>
+          </li>
+          {{- end }}
+        </ul>
+      </div>
+      {{- end }}
+
+    </aside>
+
+  </div>
+
+</div>
+
+{{ end }}

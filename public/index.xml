@@ -10,16 +10,9 @@
 		
 		
 		
-			<lastBuildDate>Fri, 06 Oct 2023 20:37:29 +0700</lastBuildDate>
+			<lastBuildDate>Wed, 04 Oct 2023 22:11:36 +0700</lastBuildDate>
 		
 			<atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
-			<item>
-				<title>About</title>
-				<link>http://localhost:1313/about/</link>
-				<pubDate>Fri, 06 Oct 2023 20:37:29 +0700</pubDate>
-				<guid>http://localhost:1313/about/</guid>
-				<description>&lt;p&gt;&lt;strong&gt;Pehtheme Hugo&lt;/strong&gt; is your gateway to the mysteries and wonders of the universe. We are a passionate community of space enthusiasts, scientists, and stargazers dedicated to sharing the awe-inspiring beauty and profound knowledge of the cosmos.&lt;/p&gt;&#xA;&lt;p&gt;At &lt;strong&gt;Pehtheme Hugo&lt;/strong&gt;, we believe that space exploration is not just a scientific endeavor; it&amp;rsquo;s a human adventure. It&amp;rsquo;s about the curiosity that drives us to look up at the night sky and wonder about the galaxies, stars, and planets that fill our universe.&lt;/p&gt;</description>
-			</item>
 			<item>
 				<title>Unveiling the Secrets of Black Holes: A Journey into the Heart of Darkness</title>
 				<link>http://localhost:1313/posts/2023/unveiling-the-secrets-of-black-holes/</link>
@@ -75,6 +68,13 @@
 				<pubDate>Thu, 27 Jul 2023 13:03:07 +0700</pubDate>
 				<guid>http://localhost:1313/posts/2022/exoplanets-hunting/</guid>
 				<description>&lt;p&gt;In the vast tapestry of the cosmos, one of the most intriguing quests of modern astronomy is the search for exoplanets, distant celestial bodies that might bear a resemblance to our own Earth. This endeavor is driven by the tantalizing question: Could there be other habitable worlds out there? In this article, we embark on a journey to explore the captivating hunt for Earth&amp;rsquo;s cosmic cousins.&lt;/p&gt;&#xA;&lt;h2 id=&#34;the-exoplanet-revolution&#34;&gt;The Exoplanet Revolution&lt;/h2&gt;&#xA;&lt;p&gt;Keyword: Exoplanet Revolution&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>About</title>
+				<link>http://localhost:1313/about/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/about/</guid>
+				<description>&lt;p&gt;Sono dottoranda in &lt;em&gt;nome del programma&lt;/em&gt; presso l&amp;rsquo;Università di &amp;hellip;, dove lavoro&#xA;su &lt;em&gt;argomento di ricerca&lt;/em&gt; sotto la supervisione del Prof. Nome Cognome.&lt;/p&gt;&#xA;&lt;p&gt;Due o tre paragrafi in prima persona: da dove vieni, di cosa ti occupi adesso e&#xA;perché è interessante. Questo è il posto giusto per il taglio narrativo — le&#xA;liste puntuali stanno già nelle sezioni sopra. Chiudi dicendo cosa cerchi&#xA;(collaborazioni, periodi all&amp;rsquo;estero, dati) e come contattarti.&lt;/p&gt;</description>
 			</item>
 	</channel>
 </rss>

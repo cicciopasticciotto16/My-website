@@ -1,0 +1,14 @@
+{{/*
+  Sezione con titolo + lista di voci. Non stampa nulla se `items` e' vuoto.
+
+  Parametri (dict): title, items
+*/}}
+{{- with .items }}
+<section class="cv-section" id="{{ $.title | urlize }}">
+
+  <h2 class="cv-section__title">{{ $.title }}</h2>
+
+  {{- partial "cv/entries.html" (dict "items" .) -}}
+
+</section>
+{{- end }}

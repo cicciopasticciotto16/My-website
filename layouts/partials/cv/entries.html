@@ -1,0 +1,44 @@
+{{/*
+  Lista di voci "periodo | contenuto" usata da Education, Experience,
+  Teaching, Talks, Awards, Service.
+
+  Parametri (dict):
+    items -> slice di voci. Campi riconosciuti per ogni voce:
+             period, title, org, place, details (markdown), bullets (slice)
+*/}}
+<ul class="cv-entries">
+
+  {{- range .items }}
+  <li class="cv-entry">
+
+    <div class="cv-entry__period">{{ .period | default "" }}</div>
+
+    <div class="cv-entry__body">
+
+      <div class="cv-entry__title">{{ .title }}</div>
+
+      {{- $where := slice }}
+      {{- with .org }}{{ $where = $where | append . }}{{ end }}
+      {{- with .place }}{{ $where = $where | append . }}{{ end }}
+      {{- with $where }}
+      <div class="cv-entry__org">{{ delimit . " · " }}</div>
+      {{- end }}
+
+      {{- with .details }}
+      <div class="cv-entry__details">{{ . | markdownify }}</div>
+      {{- end }}
+
+      {{- with .bullets }}
+      <ul class="cv-entry__bullets">
+        {{- range . }}
+        <li>{{ . | markdownify }}</li>
+        {{- end }}
+      </ul>
+      {{- end }}
+
+    </div>
+
+  </li>
+  {{- end }}
+
+</ul>
