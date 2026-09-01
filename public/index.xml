@@ -10,9 +10,16 @@
 		
 		
 		
-			<lastBuildDate>Wed, 04 Oct 2023 22:11:36 +0700</lastBuildDate>
+			<lastBuildDate>Thu, 22 Jan 2026 13:45:49 +0700</lastBuildDate>
 		
 			<atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>New publication: AI diagnostics and research methodology</title>
+				<link>http://localhost:1313/posts/2023/hypothetical-enrollment/</link>
+				<pubDate>Thu, 22 Jan 2026 13:45:49 +0700</pubDate>
+				<guid>http://localhost:1313/posts/2023/hypothetical-enrollment/</guid>
+				<description>&lt;p&gt;&lt;br&gt;&#xA;Olivieri L, Montanaro C, Pelizza A (2026) &lt;br&gt;&#xA;&amp;ldquo;Hypothetical enrollment – an anticipatory situated method to assess the implementation of AI diagnostics in clinical settings&amp;rdquo; &lt;br&gt;&#xA;&lt;em&gt;Journal of Workplace Learning&lt;/em&gt;, Vol. 38 No. 5 pp. 333–350 &lt;br&gt;&#xA;doi: &lt;a href=&#34;https://doi.org/10.1108/JWL-07-2025-0214&#34;&gt;https://doi.org/10.1108/JWL-07-2025-0214&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;purpose&#34;&gt;Purpose&lt;/h2&gt;&#xA;&lt;p&gt;The paper aims to propose “hypothetical enrollment” as an anticipatory, situated and performative methodological approach to appreciate the organizational and epistemological consequences of adopting artificial intelligence (AI) diagnostics into clinical settings. This method provides a methodological contribution to move between the expectations about AI diagnostics and their integration into real-world, clinical settings.&lt;/p&gt;</description>
+			</item>
 			<item>
 				<title>Unveiling the Secrets of Black Holes: A Journey into the Heart of Darkness</title>
 				<link>http://localhost:1313/posts/2023/unveiling-the-secrets-of-black-holes/</link>
@@ -33,13 +40,6 @@
 				<pubDate>Sat, 23 Sep 2023 22:45:37 +0700</pubDate>
 				<guid>http://localhost:1313/posts/2023/stellar-spectacles/</guid>
 				<description>&lt;p&gt;In the vast expanse of the cosmos, few events match the spectacle and scientific importance of supernova explosions. These awe-inspiring cosmic fireworks mark the dramatic end of a star&amp;rsquo;s life and offer profound insights into the universe&amp;rsquo;s workings. In this article, we embark on a journey to explore the wonders of supernova explosions, shedding light on their significance and the mysteries they unveil.&lt;/p&gt;&#xA;&lt;h2 id=&#34;supernova-explosions-cosmic-fireworks&#34;&gt;Supernova Explosions: Cosmic Fireworks&lt;/h2&gt;&#xA;&lt;p&gt;Keyword: Supernova Explosions&lt;/p&gt;</description>
-			</item>
-			<item>
-				<title>Space Exploration&#39;s Next Frontier: The Race to Reach Mars</title>
-				<link>http://localhost:1313/posts/2023/space-explorations-next-frontier/</link>
-				<pubDate>Tue, 15 Aug 2023 13:45:49 +0700</pubDate>
-				<guid>http://localhost:1313/posts/2023/space-explorations-next-frontier/</guid>
-				<description>&lt;p&gt;The dream of reaching Mars has captured the imagination of scientists, engineers, and space enthusiasts for decades. In recent years, this dream has transformed into a tangible goal, with various space agencies and private companies embarking on missions to make it a reality. In this article, we delve into space exploration&amp;rsquo;s next frontier—the race to reach Mars.&lt;/p&gt;&#xA;&lt;h2 id=&#34;the-martian-challenge&#34;&gt;The Martian Challenge&lt;/h2&gt;&#xA;&lt;p&gt;Mars, often referred to as the &amp;ldquo;Red Planet,&amp;rdquo; has long been a subject of fascination. Its potential as a second home for humanity and its scientific allure have driven the ambition to land on its surface. The challenges posed by Mars, including its harsh environment and vast distances, make it a formidable target.&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title>The Great Beyond: Exploring the Expanding Universe</title>
